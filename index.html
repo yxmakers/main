@@ -3,38 +3,68 @@
 		<title>YX Maker</title>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Understand the world, Create the world!" />
-	</head>
-	<body bgcolor = "#cccccc" background="res/main/bg.png"  style="color:white;">
-		<div align="center">
-			<div style="width:200px; height:200px; background:url('res/main/btn_study_256.png'); 
-			background-size:contain; background-repeat:no-repeat;"
-			onclick="window.location.href= 'http://yxmakers.cn/blog';return false" >
-				<!--注释掉的内容是不会显示在页面上的，但是可以通过查看源代码查看到-->
-				<!--img src="res/main/btn_study_256.png" /-->
-				<div style="font-size:36px; 
+		<style>
+			/*修改body 元素的样式*/
+			body {
+				color:"#cccccc";
+				background-color: gray;
+				background:url("res/main/bg.png");
+			}
+			/*以某一个id 创建一种样式以备后续使用*/
+			#kt_study {
+				width:200px; 
+				height:200px; 
+				background:url('res/main/btn_study_256.png'); 
+				background-size:contain; 
+				background-repeat:no-repeat;
+			}
+			#kt_study_txt {
+				font-size:36px; 
 				color:white; 
 				line-height:220px;
-				text-shadow: 3px 3px 3px #D6C918" >知识星空</div>
-
+				text-shadow: 3px 3px 3px #D6C918
+			}
+			/*以某种类型，定义样式，后续元素使用该样式时之需要定义 class=“kt_main_container” */
+			.kt_main_container{
+				width:128px; 
+				height:128px; 
+				margin:0px 0px 30px 0px;
+			}
+			/*可以定义嵌套样式*/
+			.kt_main_container img {
+				width:100%;
+				height:100%;
+			}
+			.kt_main_container_text {
+				text-align: center;
+				color:white;
+			}
+		</style>
+	</head>
+	<body>
+		<div align="center">
+			<div id="kt_study" onclick="window.location.href= 'http://yxmakers.cn/blog';return false" >
+				<div id="kt_study_txt">知识星空</div>
 			</div>
-			<div style="width:128px; height:128px; margin:30px 300px 30px 0px; " onclick="alert('TODO:学习笔记....')">
-				<img width="100%" height="100%" src="res/main/btn_road_256.png" alt="Coming soon..."/>
-				<div align="center" >心路历程</div>
+			<!--使用某种css样式之后，还可以重写（再次修改）其中的属性-->
+			<div class="kt_main_container" style="margin:30px 300px 30px 0px; " onclick="alert('TODO:学习笔记....')">
+				<img src="res/main/btn_road_256.png" alt="Coming soon..."/>
+				<div class="kt_main_container_text" >心路历程</div>
 			</div>
 
 			<div style="width:128px; height:128px; margin:-50px -300px 30px 0px; " onclick="alert('Coming Soon....')">
 				<img width="100%" height="100%" src="res/main/btn_sandbox_256.png" alt="Coming soon..."/>
-				<div align="center" >练兵场</div>
+				<div class="kt_main_container_text" >练兵场</div>
 			</div>
 
 			<div style="width:128px; height:128px; margin:30px 200px 30px 0px; " onclick="alert('TODO:智能助手....')">
-					<img width="100%" height="100%" src="res/main/btn_ai_256.png" alt="Coming soon..."/>
-					<div align="center" >图灵机</div>
+				<img width="100%" height="100%" src="res/main/btn_ai_256.png" alt="Coming soon..."/>
+				<div class="kt_main_container_text" >图灵机</div>
 			</div>
 
 			<div style="width:150px; height:150px; margin:30px -100px 30px 0px; " onclick="alert('欢迎加入QQ群:545237840')">
-					<img width="100%" height="100%" src="res/main/btn_dev_256.png" alt="Coming soon..."/>
-					<div align="center" >开发者</div>
+				<img width="100%" height="100%" src="res/main/btn_dev_256.png" alt="Coming soon..."/>
+				<div class="kt_main_container_text" >开发者</div>
 			</div>
 		</div>
 	</body>
